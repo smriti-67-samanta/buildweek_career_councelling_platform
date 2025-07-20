@@ -8,7 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import SignUp from './features/auth/SignUp';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Dashboard from './components/DashBoard';
+import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Resources from './components/Resources';
 import JobBoard from './components/JobBoard';
@@ -27,8 +27,8 @@ function App() {
   const location = useLocation();
   const { user } = useSelector((state) => state.auth);
   
-  console.log('Current user:', user); // Debugging log
-  console.log('Current path:', location.pathname); // Debugging log
+  console.log('Current user:', user); 
+  console.log('Current path:', location.pathname); 
 
   // Show navbar on all routes except login/register
   const showNavbar = !['/login', '/register'].includes(location.pathname);
@@ -66,7 +66,7 @@ function App() {
                 <Route path="/query" element={<Query />} />
         </Route>
         
-        {/* Fallback route */}
+      
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
       
